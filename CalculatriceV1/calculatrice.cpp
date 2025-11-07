@@ -1,5 +1,6 @@
 #include "calculatrice.h"
 #include "ui_calculatrice.h"
+#include <QJSEngine>
 
 Calculatrice::Calculatrice(QWidget *parent)
     : QWidget(parent)
@@ -11,5 +12,106 @@ Calculatrice::Calculatrice(QWidget *parent)
 Calculatrice::~Calculatrice()
 {
     delete ui;
+}
+
+
+void Calculatrice::on_pushButton1_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "1");
+}
+
+
+void Calculatrice::on_pushButton2_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "2");
+}
+
+
+void Calculatrice::on_pushButton3_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "3");
+}
+
+
+void Calculatrice::on_pushButton4_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "4");
+}
+
+
+void Calculatrice::on_pushButton5_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "5");
+}
+
+
+void Calculatrice::on_pushButton6_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "6");
+}
+
+
+void Calculatrice::on_pushButton7_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "7");
+}
+
+
+void Calculatrice::on_pushButton8_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "8");
+}
+
+
+void Calculatrice::on_pushButton9_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "9");
+}
+
+
+void Calculatrice::on_pushButtonAdditionner_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "+");
+}
+
+
+void Calculatrice::on_pushButtonSoustraire_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "-");
+}
+
+
+void Calculatrice::on_pushButtonMultiplier_clicked()
+{
+
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "*");
+}
+
+
+void Calculatrice::on_pushButtonDiviser_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    ui->lineEditAfficher->setText(expression + "/");
+}
+
+
+void Calculatrice::on_pushButtonEgal_clicked()
+{
+    QString expression = ui->lineEditAfficher->text();
+    QJSEngine myEngine;
+    QJSValue three = myEngine.evaluate(expression);
+    ui->lineEditAfficher->setText(three.toString());
 }
 
